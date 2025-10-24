@@ -20,7 +20,7 @@ import requests
 import yaml
 
 
-VERSION = "3.0.2"
+VERSION = "3.0.3"
 
 
 # === SMTP邮件配置 ===
@@ -3869,8 +3869,7 @@ def send_to_ntfy(
                     f"ntfy第 {actual_batch_num}/{total_batches} 批次发送失败 [{report_type}]，状态码：{response.status_code}"
                 )
                 try:
-                    error_detail = response.text[:200]  # 只显示前200字符的错误信息
-                    print(f"错误详情：{error_detail}")
+                    print(f"错误详情：{response.text}")
                 except:
                     pass
 
